@@ -1,0 +1,26 @@
+What are JSPs and why do we use them?
+They are Java Server Pages and it allows us to create HTML pages with dynamic content by letting us mix Java code into our HTML
+
+What are JSP tags?
+A custom tag is a user-defined JSP language element
+
+  Directive tag?
+  Directives allow us to set conditions that apply to the entire JSP file
+
+  Declaration tag?
+  Declaration tag is one of the scripting elements in JSP. This Tag is used for declare the variables.
+
+  Expression tag?
+  Used to evaluate expressions
+
+  Scriptlet tag? Why are they no longer commonly used?
+  Used to execute java source code, but it is very hard to read and not best practice
+
+  JSP comment tag vs. HTML comment tag?
+  HTML will be visible and JSP will not be because it is server side and the HTML tag is client side
+
+What are partials and why are they awesome?
+Reuse the structure on an HTML page so that you don't have to rewrite it all the time
+
+How can I use them in JSPs?
+
