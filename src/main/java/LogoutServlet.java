@@ -1,4 +1,3 @@
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,15 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
-public class ViewProfileServlet extends HttpServlet {
+@WebServlet(name = "LogoutServlet", urlPatterns = "/logout")
+public class LogoutServlet extends HttpServlet {
+    //TODO: When a user visits /logout, they should be logged out of your application and redirected to the login page.
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-
-        if(session.getAttribute("user") == null) { //if attribute is empty send them back to login page
-            response.sendRedirect("/login");
-            return;
-        }
-        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+        session.removeAttribute("user");
+        session.invalidate();
+        response.sendRedirect("/login");
     }
 }
